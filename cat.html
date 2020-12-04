@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800" style="border: 1px solid red"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        // 身体
+        // ctx.beginPath()
+        // ctx.ellipse(400, 650, 180, 200, 0, 0, 2 * Math.PI)
+        // ctx.fillStyle = "#089ACB"
+        // ctx.lineWidth = 2
+        // ctx.fill()
+        // ctx.stroke()
+        // ctx.closePath()
+        // // 
+        // ctx.beginPath()
+        // ctx.ellipse(400, 650, 100, 100, 0, 0, 2 * Math.PI)
+        // ctx.fillStyle = "#fff"
+        // ctx.lineWidth = 2
+        // ctx.fill()
+        // ctx.stroke()
+        // ctx.closePath()
+
+        // 头
+        ctx.beginPath()
+        ctx.arc(400, 300, 210, 200, 0, 2 * Math.PI)
+        ctx.fillStyle = "#089ACB"
+        ctx.lineWidth = 3
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 白脸
+        ctx.beginPath()
+        ctx.ellipse(400, 360, 180, 150, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 左大眼
+        ctx.beginPath()
+        ctx.ellipse(360, 222, 40, 50, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 右大眼
+        ctx.beginPath()
+        ctx.ellipse(440, 221, 40, 50, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+
+        // 左中眼
+        ctx.beginPath()
+        ctx.ellipse(375, 220, 15, 20, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#000"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 右中眼
+        ctx.beginPath()
+        ctx.ellipse(425, 220, 15, 20, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#000"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 左小眼
+        ctx.beginPath()
+        ctx.ellipse(375, 221, 5, 7, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 右小眼
+        ctx.beginPath()
+        ctx.ellipse(425, 220, 5, 7, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 大鼻子
+        ctx.beginPath()
+        ctx.arc(395, 275, 25, 25, 0, 2 * Math.PI)
+        ctx.fillStyle = "red"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        // 小鼻子
+        ctx.beginPath()
+        ctx.arc(400, 270, 10, 10, 0, 2 * Math.PI)
+        ctx.fillStyle = "#fff"
+        ctx.fill()
+        ctx.closePath()
+        //鼻子
+        ctx.beginPath()
+        ctx.moveTo(395, 300)//起点
+        ctx.quadraticCurveTo(385, 350, 395, 400)//前两个值是拐点，后两个值是终点
+        ctx.stroke()
+        ctx.closePath()
+        //腮红
+        ctx.beginPath()
+        ctx.ellipse(300, 320, 40, 35, 0, 0, 2 * Math.PI)
+        var grd = ctx.createRadialGradient(300, 320, 20, 300, 320, 100);
+        grd.addColorStop(0, "pink");
+        grd.addColorStop(1, "white");
+        // 填充渐变
+        ctx.fillStyle = grd;
+        ctx.fill()
+        ctx.closePath()
+        //胡子1
+        ctx.beginPath()
+        ctx.moveTo(250, 300)
+        ctx.quadraticCurveTo(350, 320, 350, 320)
+        ctx.stroke()
+        ctx.closePath()
+        //胡子2
+        ctx.beginPath()
+        ctx.moveTo(250, 350)
+        ctx.quadraticCurveTo(350, 350, 350, 350)
+        ctx.stroke()
+        ctx.closePath()
+
+        //胡子3
+        ctx.beginPath()
+        ctx.moveTo(250, 400)
+        ctx.quadraticCurveTo(350, 380, 350, 380)
+        ctx.stroke()
+        ctx.closePath()
+        //腮红
+        ctx.beginPath()
+        ctx.ellipse(480, 320, 40, 35, 0, 0, 2 * Math.PI)
+        var grd = ctx.createRadialGradient(480, 320, 20, 480, 320, 100);
+        grd.addColorStop(0, "pink");
+        grd.addColorStop(1, "white");
+        // 填充渐变
+        ctx.fillStyle = grd;
+        ctx.fill()
+        ctx.closePath()
+
+        //胡子4
+        ctx.beginPath()
+        ctx.moveTo(430, 320)
+        ctx.quadraticCurveTo(430, 320, 530, 310)
+        ctx.stroke()
+        ctx.closePath()
+
+        //胡子5
+        ctx.beginPath()
+        ctx.moveTo(430, 350)
+        ctx.quadraticCurveTo(450, 350, 530, 350)
+        ctx.stroke()
+        ctx.closePath()
+
+        //胡子6
+        ctx.beginPath()
+        ctx.moveTo(430, 380)
+        ctx.quadraticCurveTo(480, 380, 530, 390)
+        ctx.stroke()
+        ctx.closePath()
+        // 嘴巴
+        ctx.beginPath()
+        ctx.ellipse(400, 450, 50, 40, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "#F67862"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        //舌头
+        ctx.beginPath()
+        ctx.ellipse(400, 465, 40, 25, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "red"
+        ctx.lineWidth = 2
+        ctx.fill()
+        ctx.stroke()
+        ctx.closePath()
+        //项圈
+        ctx.beginPath()
+        ctx.moveTo(285, 485)
+        ctx.quadraticCurveTo(417, 525, 520, 480)
+        ctx.lineWidth = 20
+        ctx.strokeStyle = "red"
+        ctx.stroke()
+        ctx.closePath()
+        // 竹蜻蜓
+        ctx.beginPath()
+        ctx.moveTo(400, 90)
+        ctx.lineTo(400, 40)
+        ctx.strokeStyle = "#000"
+        ctx.lineWidth = 5
+        ctx.stroke()
+        ctx.closePath()
+        //
+        ctx.beginPath()
+        ctx.ellipse(350, 40, 50, 10, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "green"
+        ctx.fill()
+        ctx.closePath()
+        //
+        ctx.beginPath()
+        ctx.ellipse(450, 40, 50, 10, 0, 0, 2 * Math.PI)
+        ctx.fillStyle = "green"
+        ctx.fill()
+        ctx.closePath()
+    </script>
+</body>
+
+</html>
